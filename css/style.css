@@ -414,32 +414,38 @@ hr:nth-child(4) {
   margin: 2.5%;
   cursor: pointer;
   z-index: 1000;
+  padding-left: 2%;
+  padding-bottom: 2%;
 }
 
 #proj_title {
   width: 85%;
-  margin: 2.5%;
+  height: 7%;
+  padding: 1% 2.5%;
   font-size: 1em;
   color: #c22844;
   text-transform: uppercase;
+  position: relative;
+  z-index: 100;
 }
 
 #proj_desc {
   width: 95%;
-  margin: 0 2.5%;
-  padding-bottom: 2.5%;
+  height: 20%;
+  padding: 1% 2.5%;
   border-bottom: 1px solid #ddd;
   font-size: 0.8em;
   color: #777;
+  max-height: 70px;
 }
 
 #proj_gallery {
   width: 95%;
-  height: 35%;
+  top: 35%;
+  bottom:8%;
   padding: 10px 2.5%;
-  display: block;
   text-align: center;
-  position: relative;
+  position: absolute;
   overflow-y: scroll;
 }
 
@@ -491,19 +497,16 @@ hr:nth-child(4) {
   font-size: 0.8em;
   color: #777;
   cursor: pointer;
-  background-color: #fff;
   padding-bottom: 1%;
   padding-top: 1%;
 }
 
 #proj_prev {
   left: 2.5%;
-  padding-right: 30%;
 }
 
 #proj_next {
   right: 2.5%;
-  padding-left: 30%;
 }
 
 #proj_prev:hover,
@@ -701,10 +704,6 @@ p.inc_page {
     top: 38%;
   }
 
-  #proj_gallery {
-   height: 54%;
-  }
-
   #proj_title {
     font-size: 1.2em;
   }
@@ -731,9 +730,6 @@ p.inc_page {
     font-size: 1.2em;
   }
 
-  #proj_gallery {
-   height: 61%;
-  }
 }
 
 @media all and (min-height: 565px) and (min-width: 768px) {
@@ -765,9 +761,14 @@ p.inc_page {
     overflow-y: hidden;
   }
 
-  #proj_gallery {
-    height: 65%;
+  #proj_desc {
+    height: 15%;
   }
+
+  #proj_gallery {
+    top: 28%;
+  }
+
 }
 
 @media all and (min-height: 790px) {
@@ -783,10 +784,6 @@ p.inc_page {
     overflow-y: hidden;
   }
 
-  #proj_gallery {
-   height: 70%;
-  }
-
   #proj_title {
     font-size: 1.8em;
   }
@@ -794,6 +791,7 @@ p.inc_page {
   #proj_desc {
     font-size: 1.4em;
   }
+
 }
 
 @media all and (min-width: 590px) {
@@ -900,6 +898,10 @@ p.inc_page {
 @media all and (min-width: 860px) {
   .time_item {
     font-size: 18px;
+  }
+
+  #proj_desc {
+    height: 13%;
   }
 }
 
