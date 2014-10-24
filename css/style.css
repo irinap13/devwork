@@ -636,6 +636,7 @@ hr:nth-child(4) {
   font-weight: 100;
   outline: none;
   box-shadow: none;
+  resize: none;
 }
 
 .page4 input:first-child {
