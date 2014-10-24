@@ -7,6 +7,12 @@ var imagesNo = 0,
 
 $(window).load(function () {
     $( '.bxslider' ).bxSlider();
+
+    if ( Function('/*@cc_on return document.documentMode===10@*/')() ) {
+        $( "head" ).append("<link href='css/iestyle.css' rel='stylesheet' type='text/css'>");
+        $( ".wrapper" ).css( 'display','none' );
+        $( "#iefb" ).css( 'display','block' );
+    }
 });
 
 $(document).ready(function () {
