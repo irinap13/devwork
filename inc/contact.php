@@ -12,7 +12,7 @@ if (!$validationOK) {
   exit;
 }
 
-if(isset($name) && isset($email)){
+if(isset($name) && isset($email) && ($name) != "" && ($email) != "" && ($message) != ""){
 	$to  = 'predescu_irina@yahoo.co.uk';
 	$subject = 'CONTACT [ 13Colours ] ';
 	$message = '
