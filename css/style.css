@@ -830,7 +830,7 @@ p.inc_page {
   }
 
   .nav span {
-    width: initial;
+    width: 60px;
     margin: 0 15px;
     display: inline-block;
     padding: 15px 5px;
