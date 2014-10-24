@@ -10,7 +10,6 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
-
     FastClick.attach(document.body);
 
     var mouseX = 0,

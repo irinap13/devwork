@@ -1,0 +1,17 @@
+.wrapper {
+	display: none;
+}
+
+#iefb {
+	display: block;
+	font-size: 30px;
+	color: #333;
+	font-family: Arial;
+	width: 100%;
+	text-align: center;
+	margin-top:100px;
+}
+
+#iefb span, #iefb a {
+	font-size: 20px;
+}

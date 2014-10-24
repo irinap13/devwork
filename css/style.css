@@ -53,6 +53,9 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+img, a {
+  outline: none;
+}
 /* END CSS RESET */
 
 @font-face {
@@ -88,6 +91,10 @@ html {
   line-height: 1.3;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+}
+
+#iefb {
+  display: none;
 }
 
 a:link,
