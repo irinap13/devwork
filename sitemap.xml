@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+  <url>
+    <loc>http://www.13colours.co.uk/#home</loc>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.13colours.co.uk/#portfolio</loc>
+    <priority>0.6</priority> 
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.13colours.co.uk/#resume</loc>
+    <priority>0.6</priority> 
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.13colours.co.uk/#contact</loc>
+    <priority>0.6</priority> 
+    <changefreq>yearly</changefreq>
+  </url>
+</urlset>

@@ -5,20 +5,43 @@
 	<title>13 Colours - Web design portfolio</title>
 	<meta name="description" content="13 Colours is my (Irina Predescu) online porfolio and resume, showing my work as a web designer and front-end developer" />
 	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<link rel="shortcut icon" id="favicon" href="images/favicon.png"> 
+	<link rel="shortcut icon" id="favicon" href="images/favicon.png"/> 
 	<meta name="author" content="Irina Predescu">
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/lightbox.min.js"></script>
-	<script type="text/javascript" src="js/onepagescroll.js"></script>
-	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-	<script type="text/javascript" src="js/fastclick.js"></script>
-	<script type="text/javascript" src="js/jsfunctions.js"></script>
-	<link href='css/lightbox.css' rel='stylesheet' type='text/css'>
-	<link href='css/jquery.bxslider.css' rel='stylesheet' type='text/css'>
-	<link href="css/animate.min.css" rel="stylesheet" type='text/css'>
-	<link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
-	<link href='css/style.css' rel='stylesheet' type='text/css'>
-	<!--[if lte IE 9]>
+	<link rel="canonical" href="http://www.13colours.co.uk/#index.html" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,400' rel='stylesheet' type='text/css'/>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/asyncLoader.min.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-56213662-1', 'auto');
+		ga('send', 'pageview');
+
+		asyncLoader(
+			[
+			    'js/fastclick.js',
+			    'js/lightbox.min.js',
+			    'js/isInViewport.js',
+			    'js/jquery.bxslider.min.js',
+			    'js/jsfunctions.js',
+			    'css/jquery.bxslider.css',
+			    'css/lightbox.css',
+			    'css/animate.min.css',
+			    'css/style.css'
+			],
+			{
+			    'callback':function() {
+			        $('body').fadeIn( 800 );
+			        $('#test').delay(800).fadeIn();
+			        $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+				}
+			}
+		);
+	</script>
+	<!--[if lt IE 9]>
 		<link href='css/iestyle.css' rel='stylesheet' type='text/css'>
 	<![endif]-->
 </head>
@@ -28,344 +51,338 @@
 	Your browser is currently not supported.<br/>
 	<span>Don't worry, you can still browse this website. All you have to do is use a different, modern browser. Here are a few suggestions: <a href="http://www.google.co.uk/intl/en_uk/chrome/browser/index.html#eula" title="Download Google Chrome"/>Google Chrome</a>, <a href="https://www.mozilla.org/en-GB/firefox/new/" title="Download Mozilla Firefox"/>Mozilla Firefox</a> or <a href="http://www.apple.com/uk/safari/" title="Download Safari"/>Safari</a></span>
 </div>
-<div class="wrapper">	
-	<div id="project_view">
-		<div id="proj_close"></div>
-		<div id="proj_title"></div>
-		<div id="proj_desc"></div>
-		<div id="proj_gallery">
-			<div class="set" data-setid='0'>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<a href="images/portfolio/1-1.jpg" data-lightbox="set1" data-title="iPad application - Home screen design"><img src="images/portfolio/1-1.jpg" alt="iPad application - Home screen design"/></a>
-					</div>
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<h1>iPad application design for events</h1>
-							<p>At Concise Media Design, I work both as a designer and front-end developer. As a designer, my tasks are creating mockups for iPad applications for various clients and the events they hold worldwide. The <span>Interactive Conferences London</span> application is a demo one, which Concise uses to show prospective clients the functionality of their applications, among other services they provide.</p>
-						</div>
-					</div>
+
+<div id="project_view">
+	<div id="proj_close"></div>
+	<div id="proj_title"></div>
+	<div id="proj_desc"></div>
+	<div id="proj_gallery">
+		<div class="set" data-setid='0'>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<a href="images/portfolio/1-1.jpg" data-lightbox="set1" data-title="iPad application - Home screen design"><img src="images/portfolio/1-1.jpg" alt="iPad application - Home screen design"/></a>
 				</div>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<p>The iPad applications have multiple modules which help the event organisers interact with their delegates. Designs, modules and the application content are personalised for every client and their corporate identity.<p>
-						</div>
-					</div>
-					<div class="proj_column c50">
-						<a href="images/portfolio/1-2.jpg" data-lightbox="set1" data-title="iPad application - Home screen design"><img src="images/portfolio/1-2.jpg" alt="iPad application - Home screen design"/></a>
-					</div>
-				</div>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<a href="images/portfolio/1-3.jpg" data-lightbox="set1" data-title="iPad application - Quiz module design"><img src="images/portfolio/1-3.jpg" alt="iPad application - Quiz module design"/></a>
-					</div>
-					<div class="proj_column c50">
-						<a href="images/portfolio/1-4.jpg" data-lightbox="set1" data-title="iPad application - Ask a question module design"><img src="images/portfolio/1-4.jpg" alt="iPad application - Ask a question module design"/></a>
-					</div>
-				</div>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<h1>The Concise iPad applications also come ready for portrait orientation.</h1>
-						</div>
-					</div>
-					<div class="proj_column c50">
-						<a href="images/portfolio/1-5.jpg" data-lightbox="set1" data-title="iPad application - Home screen design in portrait orientation"><img src="images/portfolio/1-5.jpg" alt="iPad application - Home screen design in portrait orientation"/></a>
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<h1>iPad application design for events</h1>
+						<p>At Concise Media Design, I work both as a designer and front-end developer. As a designer, my tasks are creating mockups for iPad applications for various clients and the events they hold worldwide. The <span>Interactive Conferences London</span> application is a demo one, which Concise uses to show prospective clients the functionality of their applications, among other services they provide.</p>
 					</div>
 				</div>
 			</div>
-			<div class="set" data-setid='1'>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<h1>Bavaria Leasing</h1>
-							<p>A website template designed for a project on Freelancer.com</p>
-						</div>
-					</div>
-					<div class="proj_column c50">
-						<a href="images/portfolio/2-1.jpg" data-lightbox="set2" data-title="Bavaria Car Leasing website template - freelance project"><img src="images/portfolio/2-1.jpg" alt="Bavaria Car Leasing website template - freelance project"/></a>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<p>The iPad applications have multiple modules which help the event organisers interact with their delegates. Designs, modules and the application content are personalised for every client and their corporate identity.<p>
 					</div>
 				</div>
-				<div class="proj_row">
-					<h1><a href="images/portfolio/f2.jpg" data-lightbox="set2" data-title="Bavaria Car Leasing website template - freelance project">View full size template</a></h1>
+				<div class="proj_column c50">
+					<a href="images/portfolio/1-2.jpg" data-lightbox="set1" data-title="iPad application - Home screen design"><img src="images/portfolio/1-2.jpg" alt="iPad application - Home screen design"/></a>
 				</div>
 			</div>
-			<div class="set" data-setid='2'>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<a href="images/portfolio/3-1.jpg" data-lightbox="set3" data-title="Blacklist E-mail monitoring website template - freelance project"><img src="images/portfolio/3-1.jpg" alt="Blacklist E-mail monitoring website template - freelance project"/></a>
-					</div>
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<h1>Blacklist Monitoring</h1>
-							<p>A website template designed for a project on Freelancer.com</p>
-						</div>
-					</div>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<a href="images/portfolio/1-3.jpg" data-lightbox="set1" data-title="iPad application - Quiz module design"><img src="images/portfolio/1-3.jpg" alt="iPad application - Quiz module design"/></a>
 				</div>
-				<div class="proj_row">
-					<h1><a href="images/portfolio/f3.jpg" data-lightbox="set3" data-title="Blacklist E-mail monitoring website template - freelance project">View full size template</a></h1>
+				<div class="proj_column c50">
+					<a href="images/portfolio/1-4.jpg" data-lightbox="set1" data-title="iPad application - Ask a question module design"><img src="images/portfolio/1-4.jpg" alt="iPad application - Ask a question module design"/></a>
 				</div>
 			</div>
-			<div class="set" data-setid='3'>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<h1>Disaster.com</h1>
-							<p>A website template designed for a project on Freelancer.com</p>
-						</div>
-					</div>
-					<div class="proj_column c50">
-						<a href="images/portfolio/4-1.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-1.jpg" alt="Disaster.com website template - freelance project"/></a>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<h1>The Concise iPad applications also come ready for portrait orientation.</h1>
 					</div>
 				</div>
-				<div class="proj_row">
-					<div class="proj_column c70">
-						<a href="images/portfolio/4-2.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-2.jpg" alt="Disaster.com website template - freelance project"/></a>
-					</div>
-					<div class="proj_column c30">
-					</div>
-				</div>
-				<div class="proj_row">
-					<div class="proj_column c30">
-					</div>
-					<div class="proj_column c70">
-						<a href="images/portfolio/4-3.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-3.jpg" alt="Disaster.com website template - freelance project"/></a>
-					</div>
-				</div>
-				<div class="proj_row">
-					<div class="proj_column c70">
-						<a href="images/portfolio/4-4.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-4.jpg" alt="Disaster.com website template - freelance project"/></a>
-					</div>
-					<div class="proj_column c30">
-					</div>
-				</div>
-				<div class="proj_row">
-					<h1><a href="images/portfolio/f4.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project">View full size template</a></h1>
-				</div>
-			</div>
-			<div class="set" data-setid='4'>
-				<div class="proj_row">
-					<div class="proj_column c50">
-						<a href="images/portfolio/5-1.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project"><img src="images/portfolio/5-1.jpg" alt="Miovero clothing website template - freelance project"/></a>
-					</div>
-					<div class="proj_column c50">
-						<div class="proj_column_text">
-							<h1>Miovero Clothing</h1>
-							<p>A website template designed for a project on Freelancer.com</p>
-						</div>
-					</div>
-				</div>
-				<div class="proj_row">
-					<div class="proj_column c30">
-					</div>
-					<div class="proj_column c70">
-						<a href="images/portfolio/5-2.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project"><img src="images/portfolio/5-2.jpg" alt="Miovero clothing website template - freelance project"/></a>
-					</div>
-				</div>
-				<div class="proj_row">
-					<div class="proj_column c70">
-						<a href="images/portfolio/5-3.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project"><img src="images/portfolio/5-3.jpg" alt="Miovero clothing website template - freelance project"/></a>
-					</div>
-					<div class="proj_column c30">
-					</div>
-				</div>
-				<div class="proj_row">
-					<h1><a href="images/portfolio/f5.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project">View full size template</a></h1>
+				<div class="proj_column c50">
+					<a href="images/portfolio/1-5.jpg" data-lightbox="set1" data-title="iPad application - Home screen design in portrait orientation"><img src="images/portfolio/1-5.jpg" alt="iPad application - Home screen design in portrait orientation"/></a>
 				</div>
 			</div>
 		</div>
-		<div id="proj_prev"><img src="images/arr_left.png" alt="Previous project"/>Previous project</div>
-		<div id="proj_next">Next project<img src="images/arr_right.png" alt="Next project"/></div>
-	</div><!-- END project_view -->
-
-	<div id="panel_action">Menu <img src="images/arr_right_m.png" alt="Open menu"/></div>
-	<div class="nav">
-		<span data-index='1' class="active">Home</span>
-		<span data-index='2'>Portfolio</span>
-		<span data-index='3'>Resume</span>
-		<span data-index='4'>Contact</span>
-	</div>
-	<img src="images/logo.png" alt="13 Colours | Home" id="logo" class="nav" data-index='1'/>
-
-	<div class="main">
-		<section class="page1">
-			<div class="page_container">
-				<hr/>
-				<div class="slider_replace">
-					<span>Hello! My name is Irina, and 13Colours is my online portfolio. I am a web designer and front-end web developer from Romania, currently living and working in London, United Kingdom.</span>
+		<div class="set" data-setid='1'>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<h1>Bavaria Leasing</h1>
+						<p>A website template designed for a project on Freelancer.com</p>
+					</div>
 				</div>
-				<ul class="bxslider">
-					<li id="hello1"><span>Hello! My name is Irina, and 13Colours is my online portfolio. I am a web designer and front-end web developer from Romania, currently living and working in London, United Kingdom.</span></li>
-					<li id="hello2">
-						<div class="fill_color"></div>
-						<img src="images/skills.png" alt="HTML5, CSS3, JavaScript skills"/>
-					</li>
-				</ul>
-				<hr/>
+				<div class="proj_column c50">
+					<a href="images/portfolio/2-1.jpg" data-lightbox="set2" data-title="Bavaria Car Leasing website template - freelance project"><img src="images/portfolio/2-1.jpg" alt="Bavaria Car Leasing website template - freelance project"/></a>
+				</div>
 			</div>
-			<div id="scroll_down">
-				<span>Scroll Down</span><img src="images/arr_down.png" alt="Scroll down"/>
+			<div class="proj_row">
+				<h1><a href="images/portfolio/f2.jpg" data-lightbox="set2" data-title="Bavaria Car Leasing website template - freelance project">View full size template</a></h1>
 			</div>
-		</section>
+		</div>
+		<div class="set" data-setid='2'>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<a href="images/portfolio/3-1.jpg" data-lightbox="set3" data-title="Blacklist E-mail monitoring website template - freelance project"><img src="images/portfolio/3-1.jpg" alt="Blacklist E-mail monitoring website template - freelance project"/></a>
+				</div>
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<h1>Blacklist Monitoring</h1>
+						<p>A website template designed for a project on Freelancer.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="proj_row">
+				<h1><a href="images/portfolio/f3.jpg" data-lightbox="set3" data-title="Blacklist E-mail monitoring website template - freelance project">View full size template</a></h1>
+			</div>
+		</div>
+		<div class="set" data-setid='3'>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<h1>Disaster.com</h1>
+						<p>A website template designed for a project on Freelancer.com</p>
+					</div>
+				</div>
+				<div class="proj_column c50">
+					<a href="images/portfolio/4-1.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-1.jpg" alt="Disaster.com website template - freelance project"/></a>
+				</div>
+			</div>
+			<div class="proj_row">
+				<div class="proj_column c70">
+					<a href="images/portfolio/4-2.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-2.jpg" alt="Disaster.com website template - freelance project"/></a>
+				</div>
+				<div class="proj_column c30">
+				</div>
+			</div>
+			<div class="proj_row">
+				<div class="proj_column c30">
+				</div>
+				<div class="proj_column c70">
+					<a href="images/portfolio/4-3.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-3.jpg" alt="Disaster.com website template - freelance project"/></a>
+				</div>
+			</div>
+			<div class="proj_row">
+				<div class="proj_column c70">
+					<a href="images/portfolio/4-4.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project"><img src="images/portfolio/4-4.jpg" alt="Disaster.com website template - freelance project"/></a>
+				</div>
+				<div class="proj_column c30">
+				</div>
+			</div>
+			<div class="proj_row">
+				<h1><a href="images/portfolio/f4.jpg" data-lightbox="set4" data-title="Disaster.com website template - freelance project">View full size template</a></h1>
+			</div>
+		</div>
+		<div class="set" data-setid='4'>
+			<div class="proj_row">
+				<div class="proj_column c50">
+					<a href="images/portfolio/5-1.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project"><img src="images/portfolio/5-1.jpg" alt="Miovero clothing website template - freelance project"/></a>
+				</div>
+				<div class="proj_column c50">
+					<div class="proj_column_text">
+						<h1>Miovero Clothing</h1>
+						<p>A website template designed for a project on Freelancer.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="proj_row">
+				<div class="proj_column c30">
+				</div>
+				<div class="proj_column c70">
+					<a href="images/portfolio/5-2.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project"><img src="images/portfolio/5-2.jpg" alt="Miovero clothing website template - freelance project"/></a>
+				</div>
+			</div>
+			<div class="proj_row">
+				<div class="proj_column c70">
+					<a href="images/portfolio/5-3.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project"><img src="images/portfolio/5-3.jpg" alt="Miovero clothing website template - freelance project"/></a>
+				</div>
+				<div class="proj_column c30">
+				</div>
+			</div>
+			<div class="proj_row">
+				<h1><a href="images/portfolio/f5.jpg" data-lightbox="set5" data-title="Miovero clothing website template - freelance project">View full size template</a></h1>
+			</div>
+		</div>
+	</div>
+	<div id="proj_prev"><img src="images/arr_left.png" alt="Previous project"/>Previous project</div>
+	<div id="proj_next">Next project<img src="images/arr_right.png" alt="Next project"/></div>
+</div><!-- END project_view -->
 
-		<section class="page2">
-			<div class="page_container">
-				<h1 class="page_title">Portfolio</h1>
-				<ul class="bxslider" id="p_images"> 
-					<li data-set="0">
-						<img src="images/portfolio/p1.jpg" alt="Meet Me" data-pid="0" class="p_item"/>
-						<span class="proj_info">
-							<span class="proj_title">iPad apps design</span>
-							<span class="proj_desc">At Concise Media Design, my task as a designer is creating various mock-ups of iPad applications for events.</span>
-						</span>
-					</li>
-					<li data-set="1">
-						<img src="images/portfolio/p2.jpg" alt="Meet Me" data-pid="1" class="p_item"/>
-						<span class="proj_info">
-							<span class="proj_title">Bavaria</span>
-							<span class="proj_desc">Car leasing services &ndash; a website design for a contest on Freelancer.com</span>
-						</span>
-					</li>
-					<li data-set="2">
-						<img src="images/portfolio/p3.jpg" alt="Meet Me" data-pid="2" class="p_item"/>
-						<span class="proj_info">
-							<span class="proj_title">Blacklist monitoring</span>
-							<span class="proj_desc">E-mail blacklist search &ndash; a website design for a contest on Freelancer.com</span>
-						</span>
-					</li>
-					<li data-set="3">
-						<img src="images/portfolio/p4.jpg" alt="Meet Me" data-pid="3" class="p_item"/>
-						<span class="proj_info">
-							<span class="proj_title">Disaster.com</span>
-							<span class="proj_desc">People supporting people &ndash; a website design for a contest on Freelancer.com</span>
-						</span>
-					</li>
-					<li data-set="4">
-						<img src="images/portfolio/p5.jpg" alt="Meet Me" data-pid="4" class="p_item"/>
-						<span class="proj_info">
-							<span class="proj_title">Miovero</span>
-							<span class="proj_desc">Clothing company &ndash; a website design for a contest on Freelancer.com</span>
-						</span>
-					</li>
-				</ul>
-			</div>
-		</section>
+<div id="panel_action">Menu <img src="images/arr_right_m.png" alt="Open menu"/></div>
+<div class="nav">
+	<a href="#home" title="Home" class="active">Home</a>
+	<a href="#portfolio" title="Portfolio" >Portfolio</a>
+	<a href="#resume" title="Resume" >Resume</a>
+	<a href="#contact" title="Contact" >Contact</a>
+</div>
+<img src="images/logo.png" alt="13 Colours | Home" id="logo" class="nav" data-index='1'/>
 
-		<section class="page3">
-			<div class="page_container">
-				<h1 class="page_title">Resume</h1>
-				<ul class="bxslider">
-					<li>
-						<h1>Work experience</h1>
-						<div id="timeline">
-							<div id="time_bar"></div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Designer and front-end developer</span><br/>Concise Media Design<br/>London, United Kingdom<br/>June 2014 - Present
-								</div>
-								<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+<div class="main">
+	<div class="page1" id="home">
+		<div class="page_container">
+			<hr/>
+			<div class="slider_replace">
+				<span>Hello! My name is Irina, and 13Colours is my online portfolio. I am a web designer and front-end web developer from Romania, currently living and working in London, United Kingdom.</span>
+			</div>
+			<ul class="bxslider">
+				<li id="hello1"><span>Hello! My name is Irina, and 13Colours is my online portfolio. I am a web designer and front-end web developer from Romania, currently living and working in London, United Kingdom.</span></li>
+				<li id="hello2">
+					<div class="fill_color"></div>
+					<img src="images/skills.png" alt="HTML5, CSS3, JavaScript skills"/>
+				</li>
+			</ul>
+			<hr/>
+		</div>
+		<div id="scroll_down">
+			<a href="#portfolio" title="Scroll Down to Portfolio">Scroll Down</a><img src="images/arr_down.png" alt="Scroll down"/>
+		</div>
+	</div>
+
+	<div class="page2" id="portfolio">
+		<div class="page_container">
+			<h1 class="page_title">Portfolio</h1>
+			<ul class="bxslider" id="p_images"> 
+				<li data-set="0">
+					<img src="images/portfolio/p1.jpg" alt="Meet Me" data-pid="0" class="p_item"/>
+					<span class="proj_info">
+						<span class="proj_title">iPad apps design</span>
+						<span class="proj_desc">At Concise Media Design, my task as a designer is creating various mock-ups of iPad applications for events.</span>
+					</span>
+				</li>
+				<li data-set="1">
+					<img src="images/portfolio/p2.jpg" alt="Meet Me" data-pid="1" class="p_item"/>
+					<span class="proj_info">
+						<span class="proj_title">Bavaria</span>
+						<span class="proj_desc">Car leasing services &ndash; a website design for a contest on Freelancer.com</span>
+					</span>
+				</li>
+				<li data-set="2">
+					<img src="images/portfolio/p3.jpg" alt="Meet Me" data-pid="2" class="p_item"/>
+					<span class="proj_info">
+						<span class="proj_title">Blacklist monitoring</span>
+						<span class="proj_desc">E-mail blacklist search &ndash; a website design for a contest on Freelancer.com</span>
+					</span>
+				</li>
+				<li data-set="3">
+					<img src="images/portfolio/p4.jpg" alt="Meet Me" data-pid="3" class="p_item"/>
+					<span class="proj_info">
+						<span class="proj_title">Disaster.com</span>
+						<span class="proj_desc">People supporting people &ndash; a website design for a contest on Freelancer.com</span>
+					</span>
+				</li>
+				<li data-set="4">
+					<img src="images/portfolio/p5.jpg" alt="Meet Me" data-pid="4" class="p_item"/>
+					<span class="proj_info">
+						<span class="proj_title">Miovero</span>
+						<span class="proj_desc">Clothing company &ndash; a website design for a contest on Freelancer.com</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="page3" id="resume">
+		<div class="page_container">
+			<h1 class="page_title">Resume</h1>
+			<ul class="bxslider">
+				<li>
+					<h1>Work experience</h1>
+					<div id="timeline">
+						<div id="time_bar"></div>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Front-end web developer</span><br/>Prologue Advertising<br/>Bucharest, Romania<br/>March 2012 - April 2012
 							</div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Front-end web developer</span><br/>IT Six Global Services<br/>Craiova, Romania<br/>June 2013 - September 2014
-								</div>
-								<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+							<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+						</div>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Web designer and front-end developer</span><br/>Hipnotyka Design<br/>Craiova, Romania<br/>July 2012 - May 2013
 							</div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Web designer and front-end developer</span><br/>Hipnotyka Design<br/>Craiova, Romania<br/>July 2012 - May 2013
-								</div>
-								<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+							<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+						</div>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Front-end web developer</span><br/>IT Six Global Services<br/>Craiova, Romania<br/>June 2013 - September 2014
 							</div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Front-end web developer</span><br/>Prologue Advertising<br/>Bucharest, Romania<br/>March 2012 - April 2012
-								</div>
-								<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+							<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+						</div>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Designer and front-end developer</span><br/>Concise Media Design<br/>London, United Kingdom<br/>June 2014 - Present
+							</div>
+							<img src="images/timeline_pin.png" alt="Work timeline" class="time_item_pin"/>
+						</div>
+					</div>
+					<div id="timeline_fb">
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Front-end web developer</span><br/>Prologue Advertising<br/>Bucharest, Romania<br/>March 2012 - April 2012
 							</div>
 						</div>
-						<div id="timeline_fb">
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Designer and front-end developer</span><br/>Concise Media Design<br/>London, United Kingdom<br/>June 2014 - Present
-								</div>
-							</div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Front-end web developer</span><br/>IT Six Global Services<br/>Craiova, Romania<br/>June 2013 - September 2014
-								</div>
-							</div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Web designer and front-end developer</span><br/>Hipnotyka Design<br/>Craiova, Romania<br/>July 2012 - May 2013
-								</div>
-							</div>
-							<div class="time_item">
-								<div class="time_item_text">
-									<span>Front-end web developer</span><br/>Prologue Advertising<br/>Bucharest, Romania<br/>March 2012 - April 2012
-								</div>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Web designer and front-end developer</span><br/>Hipnotyka Design<br/>Craiova, Romania<br/>July 2012 - May 2013
 							</div>
 						</div>
-					</li>
-					<li>
-						<h1>Education</h1>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Front-end web developer</span><br/>IT Six Global Services<br/>Craiova, Romania<br/>June 2013 - September 2014
+							</div>
+						</div>
+						<div class="time_item">
+							<div class="time_item_text">
+								<span>Designer and front-end developer</span><br/>Concise Media Design<br/>London, United Kingdom<br/>June 2014 - Present
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<h1>Education</h1>
+					<div class="time_item_text">
+						<span>University of Hull, Scarborough Campus</span><br/>BSc Web Design and Development<br/>Class of 2014 - Second Class, upper division
+					</div>
+					<h1>Languages</h1>
+					<div class="col5">
 						<div class="time_item_text">
-							<span>University of Hull, Scarborough Campus</span><br/>BSc Web Design and Development<br/>Class of 2014 - Second Class, upper division
+							<span>Romanian</span><br/>Native
 						</div>
-						<h1>Languages</h1>
-						<div class="col4">
-							<div class="time_item_text">
-								<span>English</span><br/>Fluent
-							</div>
+					</div>
+					<div class="col5">
+						<div class="time_item_text">
+							<span>English</span><br/>Fluent
 						</div>
-						<div class="col4">
-							<div class="time_item_text">
-								<span>French</span><br/>Intermediate
-							</div>
+					</div>
+					<div class="col5">
+						<div class="time_item_text">
+							<span>French</span><br/>Intermediate
 						</div>
-						<div class="col4">
-							<div class="time_item_text">
-								<span>Spanish</span><br/>Beginner
-							</div>
+					</div>
+					<div class="col5">
+						<div class="time_item_text">
+							<span>Spanish</span><br/>Beginner
 						</div>
-						<div class="col4">
-							<div class="time_item_text">
-								<span>German</span><br/>Beginner (self-taught)
-							</div>
+					</div>
+					<div class="col5 lastcol">
+						<div class="time_item_text">
+							<span>German</span><br/>Beginner (self-taught)
 						</div>
-					</li>
-				</ul>
-			</div>
-		</section>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 
-		<section class="page4">
-			<div class="page_container">
-				<h1 class="page_title">Contact</h1>
-				<form method="POST" action="inc/contact.php">
-					<input type="text" placeholder="Your name" name="name"/>
-					<input type="email" placeholder="Your e-mail address" name="email"/>
-					<textarea placeholder="Message" name="message"></textarea>
-					<button type="submit" name="submit">Send message</button>
-				</form>
-				<h2>You can also find me on:</h2>
+	<div class="page4" id="contact">
+		<div class="page_container">
+			<h1 class="page_title">Contact</h1>
+			<form method="POST" action="inc/contact.php">
+				<input type="text" placeholder="Your name" name="name"/>
+				<input type="email" placeholder="Your e-mail address" name="email"/>
+				<textarea placeholder="Message" name="message"></textarea>
+				<button type="submit" name="submit">Send message</button>
+			</form>
+			<h2>You can also find me on:</h2>
+			<div id="contact_links">
 				<a href="https://www.behance.net/gallery/Portfolio/4056461" title="Irina Predescu on Behance - portfolio" target="_blank"><img src="images/behance.png" alt="Irina Predescu on Behance - portfolio"/></a>
 				<a href="https://uk.linkedin.com/in/irinapredescu/" title="Irina Predescu on LinkedIn" target="_blank"><img src="images/linkedin.png" alt="Irina Predescu on LinkedIn"/></a>
 			</div>
-		</section>
+		</div>
 	</div>
 </div>
-<script type="text/javascript">
-    onePageScroll(".main", {
-        sectionContainer: "section",
-        loop: true,
-        animationTime:400,
-        responsiveFallback: false,
-        beforeMove: function(index) {
-            var nav = $('.nav');
-            nav.children('span').removeClass('active').end().children('span[data-index="'+index+'"]').addClass('active');
-        }
-    });
-</script>
 </body>
 </html>

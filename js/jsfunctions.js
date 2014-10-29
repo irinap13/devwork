@@ -1,153 +1,149 @@
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.oRequestAnimationFrame;
-
+window.requestAnimationFrame = window.requestAnimationFrame ||
+	window.mozRequestAnimationFrame ||
+	window.webkitRequestAnimationFrame ||
+	window.oRequestAnimationFrame;
 var imagesNo = 0,
-    images = "",
-    current_index = 0;
-
-
-$(window).load(function () {
-    $( '.bxslider' ).bxSlider();
-
-    if ( Function('/*@cc_on return document.documentMode===10@*/')() ) {
-        $( "head" ).append("<link href='css/iestyle.css' rel='stylesheet' type='text/css'>");
-        $( ".wrapper" ).css( 'display','none' );
-        $( "#iefb" ).css( 'display','block' );
-    }
+	images = "",
+	current_index = 0;
+$(window).load(function() {
+	$(".bxslider").bxSlider();
+	sectionSize();
+	$(window).resize(function() {
+			sectionSize()
+	})
+}), $(document).ready(function() {
+	FastClick.attach(document.body);
+	var n = ($(window), 0),
+		e = $("#p_images").children(
+			"li:not(.bx-clone)").length,
+		i = $(".p_item");
+	$(".nav a").on("click", function() {
+		$(this).parent().children().removeClass(
+			"active"), $(this).addClass(
+			"animated bounceIn active").on(
+			"webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+			function() {
+				$(this).removeClass(
+					"animated bounceIn")
+			})
+	}), $("#panel_action").on("click",
+		function() {
+			$(".nav").toggleClass("open"), $(
+				"#panel_action").html($(".nav")
+				.hasClass("open") ?
+				'<img src="images/arr_left_m.png" alt="Close menu"/> <span>Close</span>' :
+				'Menu <img src="images/arr_right_m.png" alt="Open menu"/>'
+			)
+		}), $(".nav").each(function() {
+		$(this).children().each(function() {
+			$(this).on("click", function() {
+				moveTo(".main", $(this).data(
+					"index")), $(".nav").removeClass(
+					"open"), $(
+					"#panel_action").html(
+					'Menu <img src="images/arr_right_m.png" alt="Open menu"/>'
+				)
+			})
+		})
+	}), $(i).mouseenter(function() {
+		$(this).addClass("animated pulse")
+	}).mouseleave(function() {
+		$(this).removeClass(
+			"animated pulse")
+	}), $(i).on("click", function() {
+		update_project($(this).data("pid"))
+	}), $("#proj_prev").on("click",
+		function() {
+			0 == n ? (update_project(e - 1),
+				n = e - 1) : (update_project(n -
+				1), n--)
+		}), $("#proj_next").on("click",
+		function() {
+			e == n + 1 ? (update_project(0),
+				n = 0) : (update_project(n + 1),
+				n++)
+		}), $("#proj_close").on("click",
+		function() {
+			$("#project_view").animate({
+				opacity: 0,
+				width: "1px",
+				height: "1px",
+				left: "50%",
+				top: "50%"
+			}, 300), setTimeout(function() {
+				$("#project_view").css(
+					"display", "none")
+			}, 300)
+		}), $(window).scroll(function() {
+		$(".page1:in-viewport(10)").run(
+				function() {
+					$(".nav").children().removeClass(
+						"active"), $(
+						".nav a:first-child").addClass(
+						"active")
+				}), $(".page2:in-viewport(10)")
+			.run(function() {
+				$(".nav").children().removeClass(
+					"active"), $(
+					".nav a:nth-child(2)").addClass(
+					"active")
+			}), $(".page3:in-viewport(100)")
+			.run(function() {
+				$(".nav").children().removeClass(
+					"active"), $(
+					".nav a:nth-child(3)").addClass(
+					"active"), setTimeout(function() {
+					$(
+						"#timeline .time_item:nth-child(2)"
+					).addClass(
+						"animated zoomInDown")
+				}, 200), setTimeout(function() {
+					$(
+						"#timeline .time_item:nth-child(3)"
+					).addClass(
+						"animated zoomInUp")
+				}, 400), setTimeout(function() {
+					$(
+						"#timeline .time_item:nth-child(4)"
+					).addClass(
+						"animated zoomInDown")
+				}, 600), setTimeout(function() {
+					$(
+						"#timeline .time_item:nth-child(5)"
+					).addClass(
+						"animated zoomInUp")
+				}, 800)
+			}), $(".page4:in-viewport(100)")
+			.run(function() {
+				$(".nav").children().removeClass(
+					"active"), $(
+					".nav a:nth-child(4)").addClass(
+					"active")
+			})
+	})
 });
+function update_project(n) {
+	current_index = n, $("#project_view")
+		.css("display", "block").animate({
+			opacity: 1,
+			width: "100%",
+			height: "100%",
+			left: 0,
+			top: 0
+		}, 300);
+	var e = $("li[data-set='" +
+		current_index + "']");
+	$("#proj_title").html(e.find(
+			"span.proj_title").html()), $(
+			"#proj_desc").html(e.find(
+			"span.proj_desc").html()), $(".set")
+		.css("display", "none");
+	var i = $(".set[data-setid='" +
+		current_index + "']");
+	$(i).css("display", "block")
+}
 
-$(document).ready(function () {
-    FastClick.attach(document.body);
-
-    var mouseX = 0,
-        mouseY = 0,
-        $window = $(window),
-        $background = $(".page_bg"),
-        $o_background = $(".page_bgb"),
-        current_index = 0,
-        imagesNo = $("#p_images").children('li:not(.bx-clone)').length,
-        images = $(".p_item");
-
-    $( ".nav span" ).on( "click", function () {
-        $( this ).addClass( 'animated bounceIn' ).on( 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () { $( this ).removeClass( 'animated bounceIn' ); } );
-    });
-
-    $( "#panel_action" ).on( "click", function () {
-        $( ".nav" ).toggleClass( "open" );
-        if ( $( ".nav" ).hasClass( "open" ) ) {
-            $( "#panel_action" ).html( '<img src="images/arr_left_m.png" alt="Close menu"/> <span>Close</span>' );
-        }
-        else {
-            $( "#panel_action" ).html( 'Menu <img src="images/arr_right_m.png" alt="Open menu"/>' );
-        }
-    });
-
-    $( ".nav" ).each( function () {
-        $( this ).children().each( function () {
-            $( this ).on( "click", function () {
-                moveTo( ".main", $( this ).data( "index" ) );
-                $( ".nav").removeClass( "open" );
-                $( "#panel_action" ).html( 'Menu <img src="images/arr_right_m.png" alt="Open menu"/>' );
-            });
-        });
-    });
-
-    $( '.page_container' ).on( "touchstart", function (e) {
-        if ( $( e.target ).is( $( '.page_container' ).find( '*' ) ) ) {
-            e.stopPropagation();
-        }
-    });
-
-    $( images ).mouseenter( function () {
-        $( this ).addClass( 'animated pulse' );
-    }).mouseleave( function () {
-        $( this ).removeClass( 'animated pulse' );
-    });
-
-    $( images ).on( "click", function () {
-        update_project( $( this ).data( "pid" ) );
-    });
-    
-    $( "#proj_prev" ).on( "click", function () {
-        if ( current_index == 0 ) {
-            update_project( imagesNo - 1 );
-            current_index = imagesNo - 1;
-        }
-        else {
-            update_project( current_index - 1 );
-            current_index--;
-        }
-    });
-
-    $( "#proj_next" ).on( "click", function () {
-        if ( imagesNo == current_index + 1 ) {
-            update_project( 0 );
-            current_index = 0;
-        }
-        else {
-            update_project( current_index + 1 );
-            current_index++;
-        }
-    });
-
-    $( "#proj_close" ).on( "click", function () {
-        $( "#project_view" ).animate({
-            opacity : 0,
-            width : "1px",
-            height : "1px",
-            left : "50%",
-            top : "50%"
-        }, 300);
-        setTimeout( function () {$("#project_view").css("display", "none");}, 300 );
-    });
-}); 
-
-function update_project(i) {
-    current_index = i;
-    $( "#project_view" ).css( "display" , "block" ).animate({
-        opacity : 1,
-        width : "100%",
-        height : "100%",
-        left : 0,
-        top : 0
-    }, 300);
-    var current_set = $("li[data-set='" + current_index + "']");
-    $( "#proj_title" ).html( current_set.find("span.proj_title").html() );
-    $( "#proj_desc" ).html( current_set.find("span.proj_desc").html() );
-    $( ".set" ).css( 'display' , 'none' );
-    var set = $( ".set[data-setid='" + current_index + "']" );
-    $( set ).css( 'display' , 'block' );
-
-}; //END update_project function
-
-/*$window.mousemove(function (e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-var update = function () {
-    var finalblur,
-        fbstr,
-        transformval,
-        blurX = mouseX / $window.width() * 100,
-        blurY = mouseY / $window.height() * 100;
-    
-    blurX = (blurX > 50) ? 100 - blurX : blurX;
-    blurX = (blurY > 50) ? 100 - blurY : blurY;
-
-    blurX = (blurX / 10).toFixed(3);
-    blurY = (blurY / 10).toFixed(3);
-
-    finalblur = (blurX < blurY) ? blurX : blurY;
-    fbstr = (finalblur / 2).toString();
-    transformval = fbstr.slice(0, 1) + fbstr.slice(2, 4);
-    
-    $o_background.css({
-       "opacity":(finalblur/5).toFixed(3),
-       "transform": "scale(1." + transformval + ", 1." + transformval + ")"
-    });
-    $background.css({
-       "transform": "scale(1." + transformval + ", 1." + transformval + ")"
-    });
-
-    requestAnimationFrame(update);
-}; //END update function*/
+function sectionSize() {
+	$(".main > div").css("height", $(
+		window).height() + "px")
+}
